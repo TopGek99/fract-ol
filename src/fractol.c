@@ -56,7 +56,7 @@ void	show_mandelbrot(void *mlx, void *window)
 		{
 			point.real = ((double)i - 500) * 0.004;
 			point.imaginary = ((double)j - 500) * 0.004;
-			iterations = mendelbrot_stability_check(point);
+			iterations = mandelbrot_stability_check(point);
 			mlx_pixel_put(mlx, window, i, j, colour - (iterations * 83558));
 			j++;
 		}
