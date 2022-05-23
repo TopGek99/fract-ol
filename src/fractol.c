@@ -58,7 +58,7 @@ void	put_fractal_to_window(t_mlx_t *mlx, double modifier, int offset)
 	int			i;
 	int			j;
 	t_complex_n	point;
-	t_data_t		*img;
+	t_data_t	*img;
 
 	i = 0;
 	img = (t_data_t *)malloc(sizeof(t_data_t));
