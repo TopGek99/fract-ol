@@ -11,7 +11,7 @@ LIB_DIR=mlx
 _INC = fractol.h
 INC = $(patsubst %, $(INC_DIR)/%, $(_INC))
 
-_OBJ = fractol.o main.o
+_OBJ = fractol.o image.o hooks.o main.o
 OBJ = $(patsubst %, $(OBJ_DIR)/%, $(_OBJ))
 
 _LIB = libmlx.a
