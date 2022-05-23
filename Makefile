@@ -1,7 +1,7 @@
 NAME=fract_ol
 CC=gcc
 CFLAGS=-Wall -Wextra -Werror -I$(INC_DIR) -I$(LIB_DIR) -Ilibft/includes
-LDFLAGS=-Llibft -lft -L$(LIB_DIR) -l$(LIB_DIR) -lXext -lX11 -lm -lz
+LDFLAGS=-Llibft -lft -L$(LIB_DIR) -l$(LIB_DIR) -framework OpenGL -framework AppKit
 
 OBJ_DIR=obj
 SRC_DIR=src

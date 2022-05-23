@@ -12,8 +12,21 @@ typedef struct	complex {
 	double	imaginary;
 }				complex_n;
 
-int mandelbrot_stability_check(complex_n point);
-int julia_stability_check(complex_n point, complex_n c);
-void	show_mandelbrot(void *mlx, void *window);
-void	show_julia(void *mlx, void *window, complex_n c);
+typedef struct	s_data {
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}				data_t;
+
+typedef struct	s_mlx {
+	void		*inst;
+	void		*win;
+	complex_n	c;
+	int			fractal_type;
+}				mlx_t;
+
+void	put_fractal_to_window(mlx_t *mlx, double modifier, int offset);
+
 #endif
