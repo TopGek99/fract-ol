@@ -3,7 +3,6 @@ CC=gcc
 CFLAGS=-Wall -Wextra -Werror -I$(INC_DIR) -I$(LIB_DIR) -Ilibft/includes
 LDFLAGS=-Llibft -lft -L$(LIB_DIR) -l$(LIB_DIR) -framework OpenGL -framework AppKit
 
-OBJ_DIR=obj
 SRC_DIR=src
 INC_DIR=includes
 LIB_DIR=mlx
@@ -11,15 +10,14 @@ LIB_DIR=mlx
 _INC = fractol.h
 INC = $(patsubst %, $(INC_DIR)/%, $(_INC))
 
-_OBJ = fractol.o image.o hooks.o main.o
-OBJ = $(patsubst %, $(OBJ_DIR)/%, $(_OBJ))
+OBJ = fractol.o image.o hooks.o main.o
 
 _LIB = libmlx.a
 LIB = $(patsubst %, $(LIB_DIR)/%, $(_LIB))
 
 all: $(NAME)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC)
+%.o: $(SRC_DIR)/%.c $(INC)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(NAME): $(OBJ) $(LIB)
@@ -31,9 +29,9 @@ $(LIB):
 .PHONY: clean
 
 clean:
-	rm -f $(OBJ_DIR)/*.o
+	rm -f *.o
 
 fclean:
-	rm -f $(OBJ_DIR)/*.o $(NAME)
+	rm -f *.o $(NAME)
 
 re: fclean all
